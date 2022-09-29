@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe Saver</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+
+  </head>
+
+  <body>
+    <div class="bg">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-start">
+          <a class="navbar-item" href="">
+            <h1 class="title">Tech Blog👩‍💻</h1>
+          </a>
+
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-is-transparent">
+          <div class="navbar-end">
+            <a class="navbar-item" href="/">
+              Home🏠
+            </a>
+            <a class="navbar-item" href="/profile">
+              Profile
+            </a>
+            {{#if logged_in}}
+              <a class="navbar-item" id="logout">
+                Log out
+              </a>
+            {{else}}
+              <a class="navbar-item" href="/login">
+                Log in
+              </a>
+            {{/if}}
+          </div>
+
+        </div>
+      </nav>
+
+      <main class="section">
+        {{! Render sub layout }}
+        {{{body}}}
+      </main>
+    </div>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+
+  </body>
+
+</html>
